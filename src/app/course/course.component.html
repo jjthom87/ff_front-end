@@ -1,0 +1,43 @@
+<div>
+	<h1 class="jumbotron text-center">FatFucks Weight Loss Contest</h1>
+    <div class="row">
+        <table class="table table-dark striped col-md-4 col-md-offset-3" style="width: 50%">
+            <thead>
+                <tr>
+                    <th>Place</th>
+                	<th>Name</th>
+                    <th>% Lost</th>
+                	<th>Starting Weight</th>
+                    <th>Week 1<br>(Sept 1 - 8)</th>
+                    <th>Week 2<br>(Sept 9 - 16)</th>
+                    <th>Week 3<br>(Sept 17 - 24)</th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let user of users; let i = index">
+            	<tr>
+                    <td>{{i + 1}}</td>
+            		<td>{{user.name}}</td>
+                    <td>{{user.weight.pct}}</td>
+            		<td>{{user.weight.start}}</td>
+                    <td>{{user.weight.weekOne}}</td>
+                    <td>{{user.weight.weekTwo}}</td>
+                    <td>{{user.weight.weekThree}}</td>
+            	</tr>
+            </tbody>
+        </table>
+        <div class="col-md-6 col-md-offset-3" style="height:650px;width:650px;">
+            <canvas baseChart width="500" height="400"
+                        [datasets]="lineChartData"
+                        [labels]="lineChartLabels"
+                        [options]="lineChartOptions"
+                        [colors]="lineChartColors"
+                        [legend]="lineChartLegend"
+                        [chartType]="lineChartType"
+                        (chartHover)="chartHovered($event)"
+                        (chartClick)="chartClicked($event)"></canvas>
+        </div>
+    </div>
+    <div>
+        <input type="text"/>
+    </div>
+</div>
