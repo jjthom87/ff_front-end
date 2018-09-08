@@ -44,7 +44,7 @@ export class CourseComponent implements OnInit {
   }
 
   ngOnInit() {
-  	this.http.get(`http://localhost:3000/api/fat-fucks`).subscribe((res:Response) => {
+  	this.http.get(`https://floating-inlet-43356.herokuapp.com/api/fat-fucks`).subscribe((res:Response) => {
       //console.log(res); 
       this.populateFatties(res);
       console.log(this.steveTWeights)
